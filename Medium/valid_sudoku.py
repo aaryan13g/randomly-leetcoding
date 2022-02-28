@@ -2,15 +2,8 @@
 
 class Solution:
     def check(self, lst):
-        print(lst)
-        counter = dict(collections.Counter(lst))
-        if '.' in counter:
-            del(counter['.'])
-        vals = set(list(counter.values()))
-        for val in vals:
-            if val > 1:
-                return False
-        return True
+        lst = [elem for elem in lst if elem != '.']
+        return len(lst) == len(set(lst))
         
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         for row in board:
