@@ -2,12 +2,10 @@
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = list(s)
-        for i in range(len(s) - 1, -1, -1):
+        t1 = []
+        for i in range(len(s)):
             if s[i].isalnum():
-                if s[i].isupper():
-                    s[i] = s[i].lower()
-            else:
-                s.pop(i)
-        temp = s[::-1]
-        return s == temp
+                t1.append(s[i])
+        t1 = ''.join(t1).lower()
+        t2 = t1[::-1]
+        return t1 == t2
